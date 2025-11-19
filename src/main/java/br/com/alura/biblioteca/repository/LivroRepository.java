@@ -11,5 +11,4 @@ import java.util.Optional;
 public interface LivroRepository extends JpaRepository<Livro, Long> {
     @Lock(LockModeType.OPTIMISTIC)
     Optional<Livro> findById(Long id);
-
 }
