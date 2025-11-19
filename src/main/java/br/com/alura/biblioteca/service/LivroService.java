@@ -25,6 +25,10 @@ public class LivroService {
         }
     }
 
+    /*
+    Esta anotação é necessária porque apesar do método ser apenas uma consulta, o valor da versão será alterada devido ao
+    LockModeType.OPTIMISTIC_FORCE_INCREMENT existente na inetrface LivroRepository
+     */
     @Transactional
     public LivroDTO obterLivroPeloId(Long id) {
         Optional<Livro> livroOptional = livroRepository.findById(id);
